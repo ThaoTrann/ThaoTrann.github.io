@@ -35,29 +35,42 @@
 </nav>
 
 <div class="container text-center" id="about" >
-  <img src="images/myprof.png">
-  <p><em>Hi there!</em></p>
-  <p>I am studying Computer Science at the University of Waterloo. Besides programming, I love physics</p>
+  <div class="row">
+    <div class="col-sm-8">
+      <img src="images/myprof.png">
+      <p><em>Hi there!</em></p>
+      <p>I am a second year undergraduate student at the University of Waterloo, studying Computer Science. I am interested in mobile development. Besides programming, I love physics</p>
+    </div>
+    <div class="col-sm-4" >
+      <div class="resume">
+        <img src="images/resume.png" alt="" />
+        <div class="overlay"></div>
+        <div class="button"><a href="images/resume.pdf" target="_blank"> View </a></div>
+      </div>
+    </div>
+  </div>
+  
 </div>
 
 <div id="projects" class="container text-center">
   <div class="row">
     <div class="col-sm-4">
-      <p class="text-center"><strong>WatEIS</strong></p><br>
-      <a href="#demo2" data-toggle="collapse">
-        <img src="images/wateis.png" alt="Random Name" width="300" height="500">
-      </a>
-      <div id="demo2" class="collapse">
-        <p>Drummer</p>
-        <p>Loves drummin'</p>
-        <p>Member since 1988</p>
+      <p class="text-center" id="title"><strong>WatEIS</strong></p>
+      <p class="text-center">An Android app helps student use the University of Waterloo's Employer Info Session</p>
+      <div class="project">
+        <img src="images/wateis.png" alt="" width="400" height="500"/>
+        <div class="overlay"></div>
+        <div class="button"><a href="https://play.google.com/store/apps/details?id=com.myapp.wateis&hl=en" target="_blank"> View </a></div>
+        <br>
+        <div class="button"><a href="https://github.com/ThaoTrann/UW-Info-Sessions" target="_blank"> Github </a></div>
       </div>
     </div>
 
     <div class="col-sm-4">
-      <p class="text-center"><strong>Name</strong></p><br>
+      <p class="text-center" id="title"><strong>Bookworm</strong></p><br>
+      <p class="text-center">A web app for free books exchange</p>
       <a href="#demo" data-toggle="collapse">
-        <img src="bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+        <img src="" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
       <div id="demo" class="collapse">
         <p>Guitarist and Lead Vocalist</p>
@@ -65,18 +78,49 @@
         <p>Member since 1988</p>
       </div>
     </div>
+
     <div class="col-sm-4">
-      <p class="text-center"><strong>Name</strong></p><br>
-      <a href="#demo3" data-toggle="collapse">
-        <img src="bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
-      </a>
-      <div id="demo3" class="collapse">
-        <p>Bass player</p>
-        <p>Loves math</p>
-        <p>Member since 2005</p>
+      <p class="text-center" id="title"><strong>SaveSun</strong></p>
+      <p class="text-center">A web app helps households with solar panels manage their energy usage</p>
+      <div class="project">
+        <img src="images/saveSun.png" alt="" />
+        <div class="overlay"></div>
+        <div class="button"><a href="images/resume.pdf" target="_blank"> View </a></div>
       </div>
     </div>
-  </div>
 </div>
+
+<script>
+
+$(document).ready(function(){
+
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#home']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
 </body>
 </html>
